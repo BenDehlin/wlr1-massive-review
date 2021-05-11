@@ -32,7 +32,13 @@ massive({
 
 
 // ENDPOINTS
+app.get('/api/pie/:id', pieCtrl.getPie)
 app.get('/api/pies', pieCtrl.getPies)
 app.post('/api/pies', pieCtrl.addPie)
 app.delete('/api/pies/:id', pieCtrl.deletePie)
 app.put('/api/pies/:id', pieCtrl.editPie)
+
+// Create the endpoint
+// Create the action in the controller for the endpoint
+// Create the query for the controller to call
+// actually call the endpoint on the frontend

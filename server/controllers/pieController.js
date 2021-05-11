@@ -1,4 +1,17 @@
 module.exports = {
+  getPie: (req, res) => {
+    const db = req.app.get('db')
+    const {id} = req.params
+    db.pies.get_pie(id)
+    .then(([pie]) => {
+      // const pie = pies[0]
+      res.status(200).send(pie)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).send(err)
+    })
+  },
   getPies: (req, res) => {
     const db = req.app.get('db')
     db.pies.get_pies()
